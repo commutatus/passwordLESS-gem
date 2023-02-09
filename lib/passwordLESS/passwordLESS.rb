@@ -17,28 +17,28 @@ module PasswordLESS
 
     def send_otp(username)
       request_body = { username: username }
-      initiate_request('/api/send_otp', request_body)
+      initiate_request('/send_otp', request_body)
     end
 
     def verify_otp(username, otp)
       request_body = { username: username, otp: otp }
-      initiate_request('/api/verify_otp', request_body)
+      initiate_request('/verify_otp', request_body)
     end
 
     def verify_session(auth_token)
       request_body = { auth_token: auth_token }
-      initiate_request('/api/verify_session', request_body)
+      initiate_request('/verify_session', request_body)
     end
 
     def application_details(application_name)
       request_body = { application_name: application_name }
-      initiate_request('/api/application_details', request_body, 'get')
+      initiate_request('/application_details', request_body, 'get')
     end
 
     def initiate_request(path, request_body, method = 'post')
-      #passwordLESS domain
-      domain_url = 'https://passwordless-authetication.herokuapp.com/'
-      uri = URI.parse(domain_url + path)
+      #passwordLESS base url
+      base_url = 'https://passwordless-authetication.herokuapp.com/api'
+      uri = URI.parse(base_url + path)
 
       #add headers
       headers = { 'Content-Type': 'application/json', 'Api-Key': api_key }
@@ -53,7 +53,7 @@ module PasswordLESS
       response = http.request(request)
 
       #return the response
-      JSON.parse(response.body)
+      JSON.parse(response.body).with_indifferent_access
     end
 
     def api_key
