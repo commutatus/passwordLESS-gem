@@ -1,4 +1,4 @@
-module PasswordLESS
+module PasswordlessAuth
   require "passwordLESS/configuration"
   require 'passwordLESS/gem/version'
   class << self
@@ -36,7 +36,7 @@ module PasswordLESS
     end
 
     def initiate_request(path, request_body, method = 'post')
-      #passwordLESS base url
+      #passwordless_auth base url
       base_url = 'https://passwordless-authetication.herokuapp.com/api'
       uri = URI.parse(base_url + path)
 

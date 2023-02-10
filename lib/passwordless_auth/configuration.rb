@@ -1,4 +1,4 @@
-module PasswordLESS
+module PasswordlessAuth
   class Configuration
     attr_accessor :api_key
 
