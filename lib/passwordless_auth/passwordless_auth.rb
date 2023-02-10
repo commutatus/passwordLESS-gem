@@ -1,6 +1,6 @@
 module PasswordlessAuth
-  require "passwordLESS/configuration"
-  require 'passwordLESS/gem/version'
+  require "PasswordlessAuth/configuration"
+  require 'PasswordlessAuth/gem/version'
   class << self
     attr_accessor :configuration
     require 'net/http'
