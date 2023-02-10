@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-require_relative "lib/passwordLESS/gem/version"
+require_relative "lib/passwordless_auth/gem/version"
 
 Gem::Specification.new do |spec|
-  spec.name = "passwordLESS-gem"
-  spec.version = PasswordLESS::Gem::VERSION
+  spec.name = "passwordless_auth"
+  spec.version = PasswordlessAuth::Gem::VERSION
   spec.authors = ["Deepan Kathirvel"]
   spec.email = ["deepan@commutatus.com"]
 
